@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={`https://picsum.photos/id/${200}/600/600`} />
+        <img src={`https://picsum.photos/id/${300}/600/600`} />
       </header>
     </div>
   );
