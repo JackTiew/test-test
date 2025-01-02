@@ -23,7 +23,7 @@ const App = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React8
+          Learn React9
         </a>
         <button onClick={handleClick}>test</button>
       </header>
