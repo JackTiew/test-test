@@ -8,11 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img
-          src={`https://picsum.photos/id/${
-            Math.floor(Math.random() * (999 - 100 + 1)) + 100
-          }/600/600`}
-        />
+        <img src={`https://picsum.photos/id/${100}/600/600`} />
       </header>
     </div>
   );
