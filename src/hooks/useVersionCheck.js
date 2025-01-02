@@ -18,6 +18,7 @@ const useVersionCheck = () => {
         if (currentHash && currentHash !== newHash) {
           alert("A new version is available. Please refresh the page.");
           localStorage.setItem("appHash", newHash);
+          window.location.reload();
         } else {
           localStorage.setItem("appHash", newHash);
         }
