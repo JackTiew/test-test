@@ -5,6 +5,11 @@ import useVersionCheck from "./hooks/useVersionCheck";
 const App = () => {
   useVersionCheck();
 
+  const handleClick = () => {
+    alert("test");
+    window.location.reload();
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +23,9 @@ const App = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React4
+          Learn React6
         </a>
+        <button onClick={handleClick}>test</button>
       </header>
     </div>
   );
