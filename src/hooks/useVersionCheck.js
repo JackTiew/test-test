@@ -7,7 +7,9 @@ const useVersionCheck = () => {
   useEffect(() => {
     const checkForUpdates = async () => {
       try {
-        const response = await fetch(`/asset-manifest.json?timestamp=${new Date().getTime()}`);
+        const response = await fetch(
+          `/asset-manifest.json?timestamp=${new Date().getTime()}`
+        );
         const manifest = await response.json();
 
         const currentHash = localStorage.getItem("appHash");
@@ -28,7 +30,7 @@ const useVersionCheck = () => {
     checkForUpdates();
 
     // 每分钟检查一次
-    const intervalId = setInterval(checkForUpdates, 60000);
+    const intervalId = setInterval(checkForUpdates, 5000);
 
     // 清除定时器
     return () => clearInterval(intervalId);
