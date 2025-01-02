@@ -18,10 +18,11 @@ const useVersionCheck = () => {
         if (currentHash && currentHash !== newHash) {
           alert("A new version is available. Please refresh the page.");
           localStorage.setItem("appHash", newHash);
-          window.location.href =
-            window.location.href.split("?")[0] +
-            "?cacheBust=" +
-            new Date().getTime();
+          window.location.reload();
+          // window.location.href =
+          //   window.location.href.split("?")[0] +
+          //   "?cacheBust=" +
+          //   new Date().getTime();
         } else {
           localStorage.setItem("appHash", newHash);
         }
