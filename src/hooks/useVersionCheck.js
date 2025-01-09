@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { hashing } from "../utils/hash";
 
-const useVersionCheck = () => {
+const useVersionCheck = (newHash) => {
   const updateAvailable = () => {
     alert("A new version is available. Please refresh the page.");
     localStorage.setItem("appHash", newHash);
@@ -22,7 +22,7 @@ const useVersionCheck = () => {
         const newHash = await hashing(Object.values(manifest).join(""));
 
         if (currentHash && currentHash !== newHash) {
-          updateAvailable();
+          updateAvailable(newHash);
         } else {
           localStorage.setItem("appHash", newHash);
         }
