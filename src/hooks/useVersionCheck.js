@@ -2,7 +2,13 @@ import { useEffect } from "react";
 import { hashing } from "../utils/hash";
 
 const useVersionCheck = () => {
-  console.log("test");
+  const updateAvailable = () => {
+    alert("A new version is available. Please refresh the page.");
+    localStorage.setItem("appHash", newHash);
+    // window.location.reload();
+    window.location.href =
+      window.location.href.split("?")[0] + "?cacheBust=" + new Date().getTime();
+  };
 
   useEffect(() => {
     const checkForUpdates = async () => {
@@ -16,13 +22,7 @@ const useVersionCheck = () => {
         const newHash = await hashing(Object.values(manifest).join(""));
 
         if (currentHash && currentHash !== newHash) {
-          alert("A new version is available. Please refresh the page.");
-          localStorage.setItem("appHash", newHash);
-          // window.location.reload();
-          window.location.href =
-            window.location.href.split("?")[0] +
-            "?cacheBust=" +
-            new Date().getTime();
+          updateAvailable();
         } else {
           localStorage.setItem("appHash", newHash);
         }
