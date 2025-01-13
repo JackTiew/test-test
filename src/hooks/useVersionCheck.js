@@ -6,9 +6,9 @@ const useVersionCheck = (newHash) => {
     alert("A new version is available. Please refresh the page.");
     localStorage.setItem("appHash", newHash);
     // window.location.reload();
-    // window.location.href =
-    //   window.location.href.split("?")[0] + "?cacheBust=" + new Date().getTime();
-    window.location.replace(window.location.href);
+    window.location.href =
+      window.location.href.split("?")[0] + "?cacheBust=" + new Date().getTime();
+    // window.location.replace(window.location.href);
   };
 
   useEffect(() => {
