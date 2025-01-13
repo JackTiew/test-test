@@ -3,8 +3,8 @@ import { hashing } from "../utils/hash";
 
 const useVersionCheck = (newHash) => {
   const updateAvailable = () => {
-    // alert("A new version is available. Please refresh the page.");
-    // localStorage.setItem("appHash", newHash);
+    alert("A new version is available. Please refresh the page.");
+    localStorage.setItem("appHash", newHash);
     // // window.location.reload();
     // window.location.href =
     //   window.location.href.split("?")[0] + "?cacheBust=" + new Date().getTime();
