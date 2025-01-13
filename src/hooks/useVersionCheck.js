@@ -8,7 +8,7 @@ const useVersionCheck = (newHash) => {
     // // window.location.reload();
     // window.location.href =
     //   window.location.href.split("?")[0] + "?cacheBust=" + new Date().getTime();
-    // // window.location.replace(window.location.href);
+    window.location.replace(window.location.href);
   };
 
   useEffect(() => {
@@ -21,6 +21,10 @@ const useVersionCheck = (newHash) => {
 
         const currentHash = localStorage.getItem("appHash");
         const newHash = await hashing(Object.values(manifest).join(""));
+
+        if (currentHash === "undefined") {
+          currentHash = undefined;
+        }
 
         if (currentHash && currentHash !== newHash) {
           updateAvailable(newHash);
