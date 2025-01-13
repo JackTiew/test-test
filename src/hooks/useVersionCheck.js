@@ -19,7 +19,7 @@ const useVersionCheck = (newHash) => {
         let currentHash = localStorage.getItem("appHash");
         const newHash = await hashing(Object.values(manifest).join(""));
 
-        if (currentHash === "undefined") {
+        if (currentHash === undefined || currentHash === "undefined") {
           currentHash = undefined;
         }
 
